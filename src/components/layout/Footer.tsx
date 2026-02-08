@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
 import { BookOpen, Heart } from "lucide-react";
 import { subjects } from "@/lib/data/subjects";
-
 export function Footer() {
-  return (
-    <footer className="border-t bg-muted/30">
+  return <footer className="border-t bg-muted/30">
       <div className="container py-12">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
@@ -24,16 +22,11 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="font-semibold">Subjects</h3>
             <ul className="space-y-2 text-sm">
-              {subjects.map((subject) => (
-                <li key={subject.id}>
-                  <Link
-                    to={`/subject/${subject.id}`}
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
+              {subjects.map(subject => <li key={subject.id}>
+                  <Link to={`/subject/${subject.id}`} className="text-muted-foreground hover:text-foreground transition-colors">
                     {subject.name}
                   </Link>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
@@ -42,26 +35,17 @@ export function Footer() {
             <h3 className="font-semibold">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link
-                  to="/bookmarks"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
+                <Link to="/bookmarks" className="text-muted-foreground hover:text-foreground transition-colors">
                   My Bookmarks
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/about"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
+                <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/feedback"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
+                <Link to="/feedback" className="text-muted-foreground hover:text-foreground transition-colors">
                   Send Feedback
                 </Link>
               </li>
@@ -84,9 +68,8 @@ export function Footer() {
           <p className="flex items-center justify-center gap-1">
             Made with <Heart className="h-4 w-4 text-destructive fill-destructive" /> by Muthu Krishnan
           </p>
-          <p className="mt-1">© 2024 CivilPrep. Free educational resource for Civil Engineering students.</p>
+          <p className="mt-1">© 2026 CivilPrep. Free educational resource for Civil Engineering students.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 }
